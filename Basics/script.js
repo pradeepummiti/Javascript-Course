@@ -265,7 +265,7 @@ if(height == '23') {
 /******************************************************************************
 Coding Challenge 2
 ******************************************************************************/
-var avgJohn
+/*var avgJohn
 var avgMike;
 var avgMary;
 
@@ -288,4 +288,218 @@ else if (avgJohn === avgMike === avgMary){
 }
 else {
 	console.log("No result");
+}*/
+
+/******************************************************************************
+Functions
+******************************************************************************/
+/*function calculateAge(birthYear) {
+	return 2019 - birthYear;
+}
+
+var ageJohn = calculateAge(1990);
+var ageMary = calculateAge(1957);
+var ageMike = calculateAge(1967);
+
+console.log(ageJohn, ageMary, ageMike);
+
+function yearUntilRetirement(year, firstName) {
+	var age = calculateAge(year);
+	var retirement = 60 - age;
+
+	if(retirement > 0) {
+		console.log(firstName + " retires in " + retirement + " years");
+	}
+	else {
+		console.log(firstName + " is already retired");
+	}
+
+	
+}
+
+yearUntilRetirement(1990, "John");
+yearUntilRetirement(1967, "Mike");
+yearUntilRetirement(1957, "Mary");*/
+
+/******************************************************************************
+Function Expression
+******************************************************************************/
+/*var occupation = function(job, firstName) {
+	switch(job) {
+		case "Teacher":
+			return console.log(firstName + " teaches coding");
+		case "Driver":
+			return console.log(firstName + " drives a uber car");
+		case "Designer":
+			return console.log(firstName + " designs websites");
+		default:
+			return console.log(firstName + " does something else");
+	}
+} 
+
+occupation("Teacher", "John");
+occupation("Designer", "Mary");
+occupation("Retired", "Mike");*/
+
+/******************************************************************************
+Arrays
+******************************************************************************/
+/*
+// Array Initialization
+var names = ["John", "Mary", "Mike"];
+var years = new Array(1990, 1957, 1967);
+
+console.log(names[0] + " was born in " + years[0]);
+console.log(names[0].length);
+console.log(names[1] + " was born in " + years[1]);
+console.log(names[1].length);
+console.log(names[2] + " was born in " + years[2]);
+console.log(names[2].length);
+console.log(names.length);
+
+// Mutate array data
+names[names.length] = "Jane";
+console.log(names);
+
+//Array with different data types
+var johnDetails = new Array("John", "Smith", 1990, "Teacher", false);
+
+johnDetails.push("Blue");
+console.log(johnDetails);
+
+johnDetails.unshift("Mr.");
+console.log(johnDetails);
+
+johnDetails.pop();
+console.log(johnDetails);
+
+johnDetails.shift();
+console.log(johnDetails);
+
+console.log(johnDetails.indexOf(1990));
+
+var isDesigner = johnDetails.indexOf("Designer") === -1 ? "John is not a designer" : "John is a designer";
+console.log(isDesigner);*/
+
+/******************************************************************************
+Coding Challenge 3
+******************************************************************************/
+/*var bill1 = 124, bill2 = 48, bill3 = 268;
+
+function tipCalculator(billAmount) {
+	var tip = 0;
+
+	if(billAmount <= 50) {
+		tip = billAmount * 0.2; 
+	}
+	else if(billAmount > 50 && billAmount <= 200) {
+		tip = billAmount * 0.15;
+	}
+	else if(billAmount > 200) {
+		tip = billAmount * 0.1;
+	}
+
+	return tip;
+}
+
+var tip1 = tipCalculator(bill1);
+var tip2 = tipCalculator(bill2);
+var tip3 = tipCalculator(bill3);
+
+console.log(" The tip given at Restaurant 1 is $" + tip1);
+console.log(" The tip given at Restaurant 2 is $" + tip2);
+console.log(" The tip given at Restaurant 3 is $" + tip3);
+
+var tips = new Array(tip1, tip2, tip3);
+console.log(tips);
+
+var paidAmount = new Array(bill1 + tip1, bill2 + tip2, bill3 + tip3);
+console.log(paidAmount);*/
+
+/******************************************************************************
+Objects and Properties
+******************************************************************************/
+/*// Object Literal
+var john = {
+	firstName: "John",
+	lastName: "Smith",
+	birthYear: 1990,
+	family: ["Jane", "Mark", "Bob"],
+	job: "Teacher",
+	isMarried: false
+};
+
+console.log(john.firstName);
+console.log(john["lastName"]);
+
+var x = "birthYear";
+console.log(john[x]);
+
+john.job = "Designer";
+console.log(john);
+
+//new Object Syntax
+var jane = new Object();
+jane.firstName = "Jane";
+jane["lastName"] = "Smith";
+jane.birthYear = 1999;
+
+console.log(jane);*/
+
+/******************************************************************************
+Objects and Methods
+******************************************************************************/
+// Object Literal
+/*var john = {
+	firstName: "John",
+	lastName: "Smith",
+	birthYear: 1990,
+	family: ["Jane", "Mark", "Bob"],
+	job: "Teacher",
+	isMarried: false,
+	calculateAge: function() {
+		this.age = 2019 - this.birthYear;
+	}
+};
+
+john.calculateAge()
+console.log(john);*/
+
+/******************************************************************************
+Coding Challenge 4
+******************************************************************************/
+var detailsMark = {
+	firstName: "Mark",
+	lastName: "Noble",
+	mass: 100,
+	height: 1.72,
+	bmi: function() {
+		this.bmi = this.mass / (this.height * this.height);
+		return this.bmi;
+	}
+};
+
+var detailsJohn = {
+	firstName: "John",
+	lastName: "Smith",
+	mass: 90,
+	height: 1.79,
+	bmi: function() {
+		this.bmi = this.mass / (this.height * this.height);
+		return this.bmi;
+	}
+};
+
+console.log(detailsMark.firstName + " : " + detailsMark.bmi());
+console.log(detailsJohn.firstName + " : " + detailsJohn.bmi());
+
+if(detailsJohn.bmi > detailsMark.bmi) {
+	console.log(detailsJohn.firstName + " " + detailsJohn.lastName + " has more BMI");
+}
+else if(detailsJohn.bmi < detailsMark.bmi) {
+	console.log(detailsMark.firstName + " " + detailsMark.lastName + " has more BMI");
+}
+else {
+	console.log(detailsJohn.firstName + " " + detailsJohn.lastName + " and " + 
+		detailsMark.firstName + " " + detailsMark.lastName + " have same BMI");
 }
